@@ -1,0 +1,112 @@
+<div class="edit-page">
+    <div class="page-container">
+        <div class="header">
+            edit page
+        </div>
+        <div class="row" style="margin-top:3vw">
+            <div class="col-4" ng-repeat = "list in categories">
+                <div class="panel-info">
+                    <div class="panel-heading">
+                        {{list.name}}
+                    </div>
+                    <div class="panel-body">
+                        <ul dnd-list="list.items"
+                            dnd-allowed-types = "list.allowedType">
+                            <li ng-repeat="item in list.items"
+                                dnd-draggable="item"
+                                dnd-type="item.kind"
+                                dnd-moved="list.items.splice($index, 1)"
+                                dnd-effect-allowed="move"
+                                ng-click = "selectItem(item,$index,list)"
+                                dnd-selected="models.selected = item"
+                                ng-class="{'selected': models.selected === item}"
+                                >
+                                {{item.name}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 2vw;">
+            <div class="col-2"></div>
+            <div class="col-4" ng-repeat = "list in modifiers_groups">
+                <div class="panel-info">
+                    <div class="panel-heading">
+                        {{list.name}}
+                    </div>
+                    <div class="panel-body">
+                        <ul dnd-list="list.options"
+                            dnd-allowed-types = "list.allowedType">
+                            <li ng-repeat="item in list.options"
+                                dnd-draggable="item"
+                                dnd-type="item.kind"
+                                dnd-moved="list.options.splice($index, 1)"
+                                dnd-effect-allowed="move"
+                                ng-click = "selectItem(item,$index,list)"
+                                dnd-selected="models.selected = item"
+                                ng-class="{'selected': models.selected === item}"
+                                >
+                                {{item.name}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="cover-button">
+            <button type="button" class="btn btn-outline-info" name="button" ng-click = "saveChanges()"> Save Changes</button>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">{{selectedItem.name}}</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+              <form class="" ng-submit="saveDetailes()">
+                  <div class="row">
+                      <div class="col-6">
+                          <div class="title">
+                               name
+                          </div>
+                          <div class="input-cover ">
+                              <input type="text"  autocomplete='name' ng-model="selectedItem.name" class="input-design" required>
+                          </div>
+                      </div>
+                      <div class="col-6">
+                          <div class="title">
+                              price
+                          </div>
+                          <div class="input-cover"
+                          ng-if= "selectedItem.kind == 'Appetizers' || selectedItem.kind == 'Drinks' || selectedItem.kind == 'Burgers'">
+                              <input type="number"  name=""   ng-model="selectedItem.price" class="input-design" required>
+                          </div>
+                          <div class="input-cover"  ng-if= "selectedItem.kind == 'Temperature' || selectedItem.kind == 'Toppings' ">
+                              <input type="number"  name=""   ng-model="selectedItem.price_per_unit" class="input-design" required>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="buttons">
+                      <button type="submit" class="btn btn-outline-success">Save</button>
+                      <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                  </div>
+              </form>
+          </div>
+
+          <!-- Modal footer -->
+
+
+        </div>
+      </div>
+    </div>
+</div>

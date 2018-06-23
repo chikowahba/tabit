@@ -2,9 +2,44 @@
 <html>
 <head>
     <title>exem</title>
+
+    <!-- scripts -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/angular-drag-and-drop-lists/angular-drag-and-drop-lists.min.js"></script>
+
+
+    <!-- controllers -->
+
+    <script src="src/app.js"></script>
+    <script src="src/modules/home/home.js"></script>
+    <script src="src/modules/edit/edit.js"></script>
+
+    <!-- directives -->
+
+    <script src="src/modules/header/header.js"></script>
+
+    <!-- factories -->
+
+    <script src="src/services/catService.js"></script>
+    <script src="src/services/modifiersService.js"></script>
+
+    <!-- style -->
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="src/main.min.css" rel="stylesheet">
+
 </head>
 <body>
+    <body  ng-app = 'rosApp'>
 
+        <ros-header></ros-header>
+        
+        <div ui-view></div>
+
+    </body>
 </body>
 </html>

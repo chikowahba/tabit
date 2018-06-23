@@ -1,0 +1,65 @@
+@import "../../_vars";
+
+.edit-page {
+    .panel-info {
+        width: 20vw;
+        border: 1px solid #bce8f1;
+        .panel-heading {
+            font-size: $content-font;
+            padding: 0.4vw;
+            background-image: linear-gradient(to bottom,#d9edf7 0,#c4e3f3 100%);
+            color: #31708f;
+        }
+        .panel-body {
+            padding: 1vw;
+            ul {
+                padding: 1vw;
+                li {
+                    cursor: pointer;
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                    border-top-right-radius: 4px;
+                    border-top-left-radius: 4px;
+                    display: block;
+                    padding: 0.6vw;
+                    font-size: $content-font;
+                }
+            }
+        }
+    }
+    .cover-button {
+        text-align: center;
+        margin-top: 2vw;
+        .btn {
+            font-size: $content-font;
+        }
+    }
+    .modal {
+        .modal-content {
+            .modal-body {
+                .title {
+                    text-transform: capitalize;
+                    font-size: 20px;
+                }
+                .input-cover {
+                    .input-design {
+                        font-size: 16px;
+                        padding: 10px;
+                        background-color: #d9edf7;
+                        box-shadow: none;
+                        border: 0;
+                        border-radius: 6px;
+                    }
+
+                }
+                .buttons {
+                    text-align: center;
+                    margin: 20px;
+                    .btn-outline-success {
+                        margin-right: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

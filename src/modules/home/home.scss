@@ -1,0 +1,52 @@
+@import "../../_vars";
+
+.home-page {
+    .search-cover {
+        float: right;
+        position: relative;
+        .icon-design {
+            position: absolute;
+            color: $header-color;
+            font-size: 12px;
+            right: 28px;
+            top: 7px
+        }
+        .search-design {
+            width: 100%;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+    }
+    .menu {
+        .tabs-design {
+            ul {
+                cursor: pointer;
+                border-bottom: unset;
+                li {
+                    width: 90%;
+                    font-size: $content-font;
+                    border: 1px solid #dee2e6;
+                    a {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+        .tabs-content {
+            .content-section {
+                margin-bottom: 2vw;
+                .kind {
+                    color: $header-color;
+                    font-size: 2vw;
+                    margin-bottom: 1vw;
+                }
+                .items-section {
+                    margin-bottom: 1vw;
+                    .text-style {
+                        font-size: $content-font;
+                    }
+                }
+            }
+        }
+    }
+}

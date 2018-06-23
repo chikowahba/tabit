@@ -1,0 +1,20 @@
+//compile
+
+// imports
+@import "modules/header/header";
+@import "modules/home/home";
+@import "modules/edit/edit";
+
+// commons
+
+.header {
+    font-size: $header-size;
+    text-align: center;
+    color: $header-color;
+    text-transform: capitalize;
+    margin-bottom: 1vw;
+}
+
+.page-container {
+    padding: 1vw 4vw;
+}

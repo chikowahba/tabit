@@ -1,0 +1,74 @@
+<div class="home-page">
+    <div class="page-container">
+        <div class="header">
+            menu page
+        </div>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="search-cover col-2">
+                <i class="fa fa-search icon-design" aria-hidden="true"></i>
+                <input type="text" class="search-design" placeholder="search" value="" ng-model = "searchText">
+            </div>
+        </div>
+      <div class="menu">
+          <div class="row" ng-switch="tabsParam">
+              <div class="col-2 tabs-design">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" >
+                    <a class="nav-link" data-toggle="tab"  role="tab" aria-controls="home"  ng-click = "changeTab('menu')">menu</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" data-toggle="tab"  role="tab" aria-controls="home"  ng-click = "changeTab('modifiers')">modifiers</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tabs-content col-10" ng-switch-when = 'menu'>
+                  <div class="" ng-repeat = "cat in categories">
+                      <div class="content-section">
+                          <div class="kind">
+                             {{cat.name}}
+                          </div>
+                         <div class="items-section" ng-repeat = "item in cat.items | filter:searchText">
+                             <div class="row">
+                                 <div class="col-4">
+                                     <div class="text-style">
+                                         {{item.name}}
+                                     </div>
+                                 </div>
+                                 <div class="col-6"></div>
+                                 <div class="col-2">
+                                     <div class="text-style">
+                                         {{item.price}}
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="tabs-content col-10" ng-switch-when = 'modifiers'>
+                  <div class="content-section" ng-repeat = "modifier in modifiers_groups">
+                      <div class="kind">
+                          {{modifier.name}}
+                      </div>
+                     <div class="items-section" ng-repeat = "option in modifier.options | filter:searchText">
+                         <div class="row">
+                             <div class="col-4">
+                                 <div class="text-style">
+                                     {{option.name}}
+                                 </div>
+                             </div>
+                             <div class="col-6"></div>
+                             <div class="col-2">
+                                 <div class="text-style">
+                                     {{option.price_per_unit}}
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
